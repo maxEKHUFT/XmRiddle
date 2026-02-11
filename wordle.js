@@ -7,6 +7,7 @@ let catalogue = [];
 async function loadCatalogue() {
   const res = await fetch('./catalogue.json');
   catalogue = await res.json();
+  shuffle(catalogue);
 }
 
 //       icon grid where ive set icon label/id for referencing elsewhere , label tooltip note and then the icon png to render.
@@ -30,6 +31,12 @@ let score = 0;
 
 const LB_KEY = "leaderboard_v1";
 
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+}
 
 function showToast(msg) {
   const t = document.getElementById("toast");
@@ -257,5 +264,6 @@ function nextChart() {
     }
 
 }
+
 
 
