@@ -2,6 +2,13 @@
 // it should be easy to replicate in another format (sql or something , or a hosted json)
 //you state the svg (from measure in power bi currently) , the icons that are the answer/correct , explaination to show when you answer
 // and the indicator of higher/lower is better to render on result also.
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+}
+
 let catalogue = [];
 
 async function loadCatalogue() {
@@ -30,13 +37,6 @@ let currentIndex = 0;
 let score = 0;
 
 const LB_KEY = "leaderboard_v1";
-
-function shuffle(arr) {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-}
 
 function showToast(msg) {
   const t = document.getElementById("toast");
@@ -264,6 +264,7 @@ function nextChart() {
     }
 
 }
+
 
 
 
