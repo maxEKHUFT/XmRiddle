@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>SPC Pattern Game</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="wordle.css">
+        <script src="wordle.js"></script>
+    </head>
+    
+    <body>
+
+<h1 id="title" style="color: #425563">SPC Pattern Recognition</h1>
+
+<div id="icon-bar">
+    <span id="iconinfo">💡</span>
+    <span id="iconleaderboard">📊</span>
+    <span id="iconhelp">❓</span>
+    <span id="iconsettings">⚙️</span>
+</div>
+
+        <hr>
+        <br>
+        <div id="direction"></div>
+
+        <!-- this is where im inserting the svg image/chart -->
+        <div id="chart"></div>
+
+        <p id="instructions">
+        Select <strong>two</strong> icons that best describe the pattern shown above.
+        </p>
+
+        <!-- icon tiles -->
+        <div id="icons"></div>
+
+        <br>
+
+        <!-- submit button -->
+        <button id="submit">Submit</button>
+
+        <br><br>
+
+        <!-- result andexplanation -->
+        <h2 id="result"></h2>
+        <p id="explanation"></p>
+        <button id="next" style="display:none;" onclick="nextChart()">Next Chart</button>
+        <!-- added in toast, looks so much better -->
+<div id="toast"></div>     
+      </tbody>
+    </table>
+  </div>
+</div>
+
+   
+    </body>
+   
+</html>
