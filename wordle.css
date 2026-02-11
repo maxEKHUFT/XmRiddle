@@ -4,6 +4,7 @@ body {
 }
 
 hr {
+    max-width: 100%;
     width: 500px;
 }
 /*title and text sections - try to stick to this format*/
@@ -53,9 +54,11 @@ hr {
 }
 
 #chart {
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     margin: 20px auto;
     border: 1px solid #ddd;
+    box-sizing: border-box;
     padding: 10px;
 }
 
@@ -75,7 +78,8 @@ hr {
 }
 /* icons section*/
 #icons {
-    width: 420px;
+    width: 100%;
+    max-width: 420px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -85,14 +89,17 @@ hr {
 /* icon tiles */
 .icon-tile {
     border: 2px solid lightgray;
-    width: 80px;
-    height: 80px;
+    width: 22vw;
+    max-width: 80px;
+    height: 22vw;
+    max-height: 80px;
     margin: 6px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     transition: all 0.2s ease;
+
 }
 
 .icon-tile:hover {
