@@ -1,3 +1,51 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "...",
+  appId: "..."
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+import {
+  collection,
+  addDoc,
+  serverTimestamp,
+  query,
+  orderBy,
+  limit,
+  getDocs
+}
+  from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+export async function submitScore(name, score) {
+  try {
+    await addDoc(collection(db, "scores"), {
+      name,
+      score,
+      createdAt: serverTimestamp()
+    });
+    console.log("Score submitted");
+  } catch (err) {
+    console.error("Error submitting score:", err)l
+  }
+}
+export async function getTopScores(max = 10) {
+  const q = query(
+    collection(db, "scores"),
+    orderBy("score","desc"),
+    limit(max)
+    );
+
+  const snapshot = await getDocs(q);
+  return snapshot.docs.map(doc = > doc.data());
+}
 // json srray catalogue , these are preset examples ive grabbed from scorecard but the format is v consistent so
 // it should be easy to replicate in another format (sql or something , or a hosted json)
 //you state the svg (from measure in power bi currently) , the icons that are the answer/correct , explaination to show when you answer
@@ -264,6 +312,7 @@ function nextChart() {
     }
 
 }
+
 
 
 
