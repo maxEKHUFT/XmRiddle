@@ -267,7 +267,3 @@ function nextChart() {
 
 
 
-
-
-
-
