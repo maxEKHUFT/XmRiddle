@@ -231,7 +231,7 @@ hr {
 }
 
 #leaderboardModal {
-    display: none !important;   /* FORCE it hidden initially */
+    display: none; /* remove !important */
     position: fixed;
     top: 0;
     left: 0;
@@ -242,10 +242,8 @@ hr {
     justify-content: center;
     align-items: center;
 }
-
-/* Show modal only when JS adds .show */
 #leaderboardModal.show {
-    display: flex;              /* display as flex when active */
+    display: flex;
 }
 
 /* Modal box */
@@ -286,6 +284,7 @@ hr {
     cursor: pointer;
 }
 #closeLeaderboard:hover { background: #2e3b48; }
+
 
 
 
