@@ -25,6 +25,7 @@ hr {
 
 /* Individual icons inside the bar */
 #icon-bar span {
+    display: inline-block;
     font-size: 24px;       /* adjust size of emoji/icons */
     cursor: pointer;       /* hand cursor on hover */
     transition: opacity 0.2s ease;
@@ -281,6 +282,7 @@ hr {
     cursor: pointer;
 }
 #closeLeaderboard:hover { background: #2e3b48; }
+
 
 
 
