@@ -241,13 +241,13 @@ function nextChart() {
         loadDir(); 
         loadIcons();
 
-// hide next button till needed
+        // hide next button till needed
         document.getElementById("next").style.display = "none";
 
-// submit starts disabled
+        // submit starts disabled
         document.getElementById("submit").disabled = true;
 
-// clear previous round UI
+        // clear previous round UI
         const resultEl = document.getElementById("result");
         resultEl.innerText = "";
         resultEl.className = "";
@@ -260,16 +260,21 @@ function nextChart() {
             tile.style.pointerEvents = "auto";
         });
 
-} else {
-    showToast("All charts completed!");
+    } else {
+        showToast("All charts completed!");
 
-    const name = prompt("Enter your name:");
-    if (name) {
-        submitScore(name, score);
+        const name = prompt("Enter your name:");
+        if (name) {
+            submitScore(name, score); // send score to Firebase
+        }
+
+        document.getElementById("next").style.display = "none";
     }
-
-    document.getElementById("next").style.display = "none";
 }
+
+// --------------------------------------
+// Firebase leaderboard modal code (standalone, not inside nextChart)
+// --------------------------------------
 async function showLeaderboard() {
     const listDiv = document.getElementById("leaderboardList");
     listDiv.innerHTML = "Loading...";
@@ -305,4 +310,3 @@ document.getElementById("closeLeaderboard").addEventListener("click", () => {
 // Hook 📊 icon to open leaderboard
 document.getElementById("iconleaderboard").addEventListener("click", showLeaderboard);
 
-}
