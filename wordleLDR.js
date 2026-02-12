@@ -270,6 +270,39 @@ function nextChart() {
 
     document.getElementById("next").style.display = "none";
 }
+async function showLeaderboard() {
+    const listDiv = document.getElementById("leaderboardList");
+    listDiv.innerHTML = "Loading...";
 
+    try {
+        const topScores = await getTopScores(10); // uses your existing function
+        if (topScores.length === 0) {
+            listDiv.innerHTML = "<p>No scores yet.</p>";
+            return;
+        }
+
+        listDiv.innerHTML = ""; // clear
+
+        topScores.forEach((entry, index) => {
+            const row = document.createElement("div");
+            row.style.marginBottom = "5px";
+            row.innerHTML = `<strong>${index+1}. ${entry.name}</strong>: ${entry.score}`;
+            listDiv.appendChild(row);
+        });
+    } catch (err) {
+        listDiv.innerHTML = "<p>Error loading leaderboard.</p>";
+        console.error(err);
+    }
+
+    document.getElementById("leaderboardModal").style.display = "block";
+}
+
+// Close leaderboard modal
+document.getElementById("closeLeaderboard").addEventListener("click", () => {
+    document.getElementById("leaderboardModal").style.display = "none";
+});
+
+// Hook 📊 icon to open leaderboard
+document.getElementById("iconleaderboard").addEventListener("click", showLeaderboard);
 
 }
