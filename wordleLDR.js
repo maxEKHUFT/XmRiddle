@@ -298,13 +298,13 @@ async function showLeaderboard() {
     document.getElementById("leaderboardModal").classList.add("show");
 }
 
-// Close modal
-document.getElementById("closeLeaderboard").addEventListener("click", () => {
-    document.getElementById("leaderboardModal").classList.remove("show");
+window.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("closeLeaderboard").addEventListener("click", () => {
+        document.getElementById("leaderboardModal").classList.remove("show");
+    });
+    document.getElementById("iconleaderboard").addEventListener("click", showLeaderboard);
 });
 
-// Hook icon
-document.getElementById("iconleaderboard").addEventListener("click", showLeaderboard);
 
 
 
