@@ -91,23 +91,6 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove("show"), 1200);
 }
 
-  list.innerHTML = "";
-
-  board.forEach((e, idx) => {
-    const row = document.createElement("div");
-    row.className = "lb-entry";
-
-    row.innerHTML = `
-      <span class="lb-rank">${idx + 1}</span>
-      <span class="lb-name">${e.name}</span>
-      <span class="lb-score">${e.score} / ${e.total}</span>
-    `;
-
-    list.appendChild(row);
-  });
-
-
-
 // starts the game loop , loading the svg , direction text , icon grid and the submit button through the functions below
 window.onload = async function() {
     await loadCatalogue();   // ⬅ NEW
