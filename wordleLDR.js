@@ -105,7 +105,7 @@ function showToast(msg) {
 
     list.appendChild(row);
   });
-}
+
 
 
 // starts the game loop , loading the svg , direction text , icon grid and the submit button through the functions below
@@ -290,8 +290,3 @@ function nextChart() {
 
 
 }
-
-
-
-
-
