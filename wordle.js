@@ -2,12 +2,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "...",
-  appId: "..."
+  apiKey: "AIzaSyC0HLJuWz2stJ9GjFfW1uiaUhq8ZB-q-Ow",
+  authDomain: "xmriddle-c681d.firebaseapp.com",
+  projectId: "xmriddle-c681d",
+  storageBucket: "xmriddle-c681d.firebasestorage.app",
+  messagingSenderId: "433139145058",
+  appId: "1:433139145058:web:c7cc45bf566057567f343b"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -312,6 +312,7 @@ function nextChart() {
     }
 
 }
+
 
 
 
