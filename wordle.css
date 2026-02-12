@@ -230,23 +230,34 @@ hr {
   transform: translate(-50%, -50%) scale(0.95);
 }
 
+/* Modal overlay */
 #leaderboardModal {
-    display: none; /* hidden by default */
-    position: fixed;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    display: none;           /* hidden by default */
+    position: fixed;         /* sits on top of everything */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5); /* semi-transparent background */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    display: flex;           /* center the modal content */
+}
+
+/* Actual modal box */
+#leaderboardContent {
     background: #fefefe;
     border: 2px solid #425563;
     border-radius: 10px;
     padding: 20px;
-    z-index: 1000;
     max-width: 300px;
     width: 90%;
     box-shadow: 0 5px 20px rgba(0,0,0,0.3);
     font-family: sans-serif;
 }
 
+/* Entries inside modal */
 #leaderboardList div {
     display: flex;
     justify-content: space-between;
@@ -255,10 +266,12 @@ hr {
     font-size: 16px;
 }
 
+/* Highlight top 3 */
 #leaderboardList div:nth-child(1) { font-weight: bold; color: gold; }
 #leaderboardList div:nth-child(2) { font-weight: bold; color: silver; }
 #leaderboardList div:nth-child(3) { font-weight: bold; color: #cd7f32; }
 
+/* Close button */
 #closeLeaderboard {
     margin-top: 10px;
     padding: 6px 12px;
@@ -268,10 +281,8 @@ hr {
     border-radius: 5px;
     cursor: pointer;
 }
+#closeLeaderboard:hover { background: #2e3b48; }
 
-#closeLeaderboard:hover {
-    background: #2e3b48;
-}
 
 
 
