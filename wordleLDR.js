@@ -272,16 +272,13 @@ function nextChart() {
     }
 }
 
-// --------------------------------------
-// Firebase leaderboard modal code (standalone, not inside nextChart)
-// --------------------------------------
 async function showLeaderboard() {
     const listDiv = document.getElementById("leaderboardList");
     listDiv.innerHTML = "Loading...";
 
     try {
-        const topScores = await getTopScores(10); // fetch scores from Firebase
-        listDiv.innerHTML = ""; // clear
+        const topScores = await getTopScores(10); // your Firebase function
+        listDiv.innerHTML = "";
 
         if (topScores.length === 0) {
             listDiv.innerHTML = "<p>No scores yet.</p>";
@@ -297,16 +294,17 @@ async function showLeaderboard() {
         console.error(err);
     }
 
-    // SHOW the modal in the center
-    document.getElementById("leaderboardModal").style.display = "flex";
+    // Add .show class to display modal
+    document.getElementById("leaderboardModal").classList.add("show");
 }
 
-// Close leaderboard modal
+// Close modal
 document.getElementById("closeLeaderboard").addEventListener("click", () => {
-    document.getElementById("leaderboardModal").style.display = "none";
+    document.getElementById("leaderboardModal").classList.remove("show");
 });
 
-// Hook 📊 icon to open leaderboard
+// Hook icon
 document.getElementById("iconleaderboard").addEventListener("click", showLeaderboard);
+
 
 
