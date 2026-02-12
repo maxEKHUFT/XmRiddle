@@ -230,7 +230,6 @@ hr {
   transform: translate(-50%, -50%) scale(0.95);
 }
 
-/* Leaderboard modal */
 #leaderboardModal {
     display: none; /* hidden by default */
     position: fixed;
@@ -248,7 +247,6 @@ hr {
     font-family: sans-serif;
 }
 
-/* Leaderboard entries */
 #leaderboardList div {
     display: flex;
     justify-content: space-between;
@@ -257,12 +255,10 @@ hr {
     font-size: 16px;
 }
 
-/* Highlight top ranks */
 #leaderboardList div:nth-child(1) { font-weight: bold; color: gold; }
 #leaderboardList div:nth-child(2) { font-weight: bold; color: silver; }
 #leaderboardList div:nth-child(3) { font-weight: bold; color: #cd7f32; }
 
-/* Close button */
 #closeLeaderboard {
     margin-top: 10px;
     padding: 6px 12px;
@@ -276,5 +272,6 @@ hr {
 #closeLeaderboard:hover {
     background: #2e3b48;
 }
+
 
 
