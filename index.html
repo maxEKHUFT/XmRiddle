@@ -1,14 +1,14 @@
 <html>
-    <head>
-        <title>SPC Pattern Game</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <title>SPC Pattern Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="wordle.css">
-        <script type="module" src="wordleLDR.js"></script>
-    </head>
-    
-    <body>
+    <link rel="stylesheet" href="wordle.css">
+    <script type="module" src="wordleLDR.js"></script>
+</head>
+
+<body>
 
 <h1 id="title" style="color: #425563">SPC Pattern Recognition</h1>
 
@@ -19,47 +19,43 @@
     <span id="iconsettings">⚙️</span>
 </div>
 
-        <hr>
-        <br>
-        <div id="direction"></div>
+<hr>
+<br>
+<div id="direction"></div>
 
-        <!-- this is where im inserting the svg image/chart -->
-        <div id="chart"></div>
+<!-- this is where im inserting the svg image/chart -->
+<div id="chart"></div>
 
-        <p id="instructions">
-        Select <strong>two</strong> icons that best describe the pattern shown above.
-        </p>
+<p id="instructions">
+    Select <strong>two</strong> icons that best describe the pattern shown above.
+</p>
 
-        <!-- icon tiles -->
-        <div id="icons"></div>
+<!-- icon tiles -->
+<div id="icons"></div>
 
-        <br>
+<br>
 
-        <!-- submit button -->
-        <button id="submit">Submit</button>
+<!-- submit button -->
+<button id="submit">Submit</button>
 
-        <br><br>
+<br><br>
 
-        <!-- result andexplanation -->
-        <h2 id="result"></h2>
-        <p id="explanation"></p>
-        <button id="next" style="display:none;">Next Chart</button>
-        <!-- <button id="next" style="display:none;" onclick="nextChart()">Next Chart</button> TEMPORARY COMMENT OUT-->
-        <!-- added in toast, looks so much better -->
+<!-- result and explanation -->
+<h2 id="result"></h2>
+<p id="explanation"></p>
+<button id="next" style="display:none;">Next Chart</button>
+
+<!-- toast notification -->
 <div id="toast"></div>     
-      </tbody>
-    </table>
-  </div>
-</div>
+
+<!-- leaderboard modal -->
 <div id="leaderboardModal">
-    <h2>Leaderboard</h2>
-    <div id="leaderboardList">Loading...</div>
-    <button id="closeLeaderboard">Close</button>
-</div>   
-    </body>
-   
+    <div id="leaderboardContent">
+        <h2>Leaderboard</h2>
+        <div id="leaderboardList">Loading...</div>
+        <button id="closeLeaderboard">Close</button>
+    </div>
+</div>
+
+</body>
 </html>
-
-
-
-
