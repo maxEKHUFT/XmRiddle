@@ -151,6 +151,7 @@ hr {
     max-width: 600px;
     margin: 10px auto;
     font-size: 16px;
+    color: #425563;
     line-height: 1.4;
 }
 
@@ -275,6 +276,7 @@ hr {
     cursor: pointer;
 }
 #closeLeaderboard:hover { background: #2e3b48; }
+
 
 
 
