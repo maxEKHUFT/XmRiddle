@@ -3,7 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC0HLJuWz2stJ9GjFfW1uiaUhq8ZB-q-Ow",
+  apiKey: "AIzaSyAI-DNNIjjrc8rOyH2KS2LG0iDY2vBDfB8",
   authDomain: "xmriddle-c681d.firebaseapp.com",
   projectId: "xmriddle-c681d",
   storageBucket: "xmriddle-c681d.firebasestorage.app",
