@@ -194,7 +194,7 @@ function setupSubmit() {
     });
 }
 
-// this displays results and transforms submit into "> > >"
+// this is the newer result function, displays results and transforms submit into "> > >"
 function revealResult(isCorrect, correctIcons) {
     document.querySelectorAll(".icon-tile").forEach(tile => {
         const id = tile.dataset.id;
@@ -225,11 +225,16 @@ function revealResult(isCorrect, correctIcons) {
     document.getElementById("explanation").innerText =
         catalogue[currentIndex].explanation;
 
-    // Transform submit button into "> > >"
+    // --- MINIMAL CHANGE: transform submit button safely ---
     const submitBtn = document.getElementById("submit");
-    submitBtn.innerText = "> > >";
-    submitBtn.disabled = false; // enable to allow next chart
-    submitBtn.onclick = nextChart; // clicking now moves to next chart
+
+    // clone button to remove old listeners and prevent toast firing
+    const newBtn = submitBtn.cloneNode(true);
+    submitBtn.replaceWith(newBtn);
+
+    newBtn.innerText = "> > >";
+    newBtn.disabled = false;
+    newBtn.onclick = nextChart; // clicking now moves to next chart
 }
 
 function updateSubmitState() {
@@ -251,7 +256,7 @@ function nextChart() {
         const submitBtn = document.getElementById("submit");
         submitBtn.innerText = "Submit";
         submitBtn.disabled = true;
-        setupSubmit(); // restore original click behavior
+        setupSubmit(); // restore original submit click behavior
 
         // Clear previous round UI
         const resultEl = document.getElementById("result");
