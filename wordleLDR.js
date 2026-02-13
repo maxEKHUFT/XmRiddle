@@ -8,7 +8,7 @@ const firebaseConfig = {
   projectId: "xmriddle-c681d",
   storageBucket: "xmriddle-c681d.firebasestorage.app",
   messagingSenderId: "433139145058",
-  appId: "1:433139145058:web:c7cc45bf566057567f343b"
+  appId: "1:433139145058:web:7921e3424c9756c97f343b"
 };
 
 const app = initializeApp(firebaseConfig);
