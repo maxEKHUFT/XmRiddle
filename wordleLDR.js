@@ -167,29 +167,34 @@ tile.addEventListener("click", () => {
     });
 }
 
-// this controls my submit button , bit fiddly but essentially its only available/opaque after 2 choices have been chosen
+// this controls my submit button, only available after 2 choices are selected
 function setupSubmit() {
-document.getElementById("submit").addEventListener("click", () => {
-    const selected = [...document.querySelectorAll(".icon-tile.selected")]
-        .map(t => t.dataset.id);
+    const submitBtn = document.getElementById("submit");
 
- //as above this bit specifically checks selection rate
-    if (selected.length < 2) {
-        showToast("Please select 2 icons before submitting.");
-        return;
-    }
+    // Remove any existing click handlers to avoid duplicates
+    submitBtn.replaceWith(submitBtn.cloneNode(true));
+    const freshSubmit = document.getElementById("submit");
 
-    const correct = catalogue[currentIndex].correctIcons;
+    freshSubmit.addEventListener("click", () => {
+        const selected = [...document.querySelectorAll(".icon-tile.selected")]
+            .map(t => t.dataset.id);
 
-    const isCorrect =
-        selected.length === correct.length &&
-        selected.every(id => correct.includes(id));
+        if (selected.length < 2) {
+            showToast("Please select 2 icons before submitting.");
+            return;
+        }
 
-    revealResult(isCorrect, correct);
-});
+        const correct = catalogue[currentIndex].correctIcons;
 
+        const isCorrect =
+            selected.length === correct.length &&
+            selected.every(id => correct.includes(id));
+
+        revealResult(isCorrect, correct);
+    });
 }
-//this is the newer result function , im trying to colour/animate the different resulsts (seems to work so far)
+
+// this displays results and transforms submit into "> > >"
 function revealResult(isCorrect, correctIcons) {
     document.querySelectorAll(".icon-tile").forEach(tile => {
         const id = tile.dataset.id;
@@ -205,7 +210,6 @@ function revealResult(isCorrect, correctIcons) {
     });
 
     const resultEl = document.getElementById("result");
-
     resultEl.className = "";
     void resultEl.offsetWidth;
 
@@ -221,10 +225,12 @@ function revealResult(isCorrect, correctIcons) {
     document.getElementById("explanation").innerText =
         catalogue[currentIndex].explanation;
 
-    document.getElementById("submit").disabled = true;
-    document.getElementById("next").style.display = "inline-block";
+    // Transform submit button into "> > >"
+    const submitBtn = document.getElementById("submit");
+    submitBtn.innerText = "> > >";
+    submitBtn.disabled = false; // enable to allow next chart
+    submitBtn.onclick = nextChart; // clicking now moves to next chart
 }
-
 
 function updateSubmitState() {
     const selectedCount =
@@ -237,25 +243,24 @@ function nextChart() {
     currentIndex++;
 
     if (currentIndex < catalogue.length) {
-
         loadChart();
-        loadDir(); 
+        loadDir();
         loadIcons();
 
-        // hide next button till needed
-        document.getElementById("next").style.display = "none";
+        // Reset submit button to default state
+        const submitBtn = document.getElementById("submit");
+        submitBtn.innerText = "Submit";
+        submitBtn.disabled = true;
+        setupSubmit(); // restore original click behavior
 
-        // submit starts disabled
-        document.getElementById("submit").disabled = true;
-
-        // clear previous round UI
+        // Clear previous round UI
         const resultEl = document.getElementById("result");
         resultEl.innerText = "";
         resultEl.className = "";
 
         document.getElementById("explanation").innerText = "";
 
-        // reset icons
+        // Reset icons
         document.querySelectorAll(".icon-tile").forEach(tile => {
             tile.classList.remove("correct", "wrong", "selected");
             tile.style.pointerEvents = "auto";
@@ -266,12 +271,15 @@ function nextChart() {
 
         const name = prompt("Enter your name:");
         if (name) {
-            submitScore(name, score); 
+            submitScore(name, score);
         }
 
-        document.getElementById("next").style.display = "none";
+        // Hide submit button at the very end
+        const submitBtn = document.getElementById("submit");
+        submitBtn.style.display = "none";
     }
 }
+
 //this is all my firebase stuff , submitting to leaderboard
 async function showLeaderboard() {
     const listDiv = document.getElementById("leaderboardList");
