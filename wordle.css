@@ -16,8 +16,8 @@ hr {
 
 #icon-bar {
     display: flex;
-    justify-content: center;  /* center the icons horizontally */
-    gap: 12px;                /* space between icons */
+    justify-content: center; 
+    gap: 12px;             
     margin: 10px 0;
     flex-wrap: wrap;          /* wrap if screen is too small */
 }
@@ -31,7 +31,7 @@ hr {
 }
 
 #icon-bar span:hover {
-    opacity: 0.85;         /* subtle hover effect */
+    opacity: 0.85;   
 }
 
 
@@ -41,7 +41,6 @@ hr {
     margin: 12px 0 18px;
 }
 
-/*top section svg/direction*/
 #direction {
     font-size: 24px;
     font-weight: bold;
@@ -82,7 +81,6 @@ hr {
     justify-content: center;
 }
 
-/* icon tiles */
 .icon-tile {
     border: 2px solid lightgray;
     width: 22vw;
@@ -133,11 +131,10 @@ hr {
   outline-offset: 2px;
 }
 
-/* result ad explanation */
 #result {
     font-size: 24px;
     margin-top: 15px;
-  display: inline-block; /* prevents width changing/recalcing */
+  display: inline-block;
 }
 
 .result-correct {
@@ -208,7 +205,6 @@ hr {
   color: #fff;
   padding: 20px 30px;
   font-size: 20px;
-  /*border-radius: 8px;*/
   min-width: 140px;
   text-align: center;
   opacity: 0;
@@ -227,7 +223,7 @@ hr {
 }
 
 #leaderboardModal {
-    display: none; /* remove !important */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -242,7 +238,7 @@ hr {
     display: flex;
 }
 
-/* Modal box */
+
 #leaderboardContent {
     background: #fefefe;
     border: 2px solid #425563;
@@ -255,7 +251,6 @@ hr {
     text-align: center;
 }
 
-/* Entries inside modal */
 #leaderboardList div {
     display: flex;
     justify-content: space-between;
@@ -264,7 +259,7 @@ hr {
     font-size: 16px;
 }
 
-/* Top 3 highlight */
+/* Top 3 colouring */
 #leaderboardList div:nth-child(1) { font-weight: bold; color: gold; }
 #leaderboardList div:nth-child(2) { font-weight: bold; color: silver; }
 #leaderboardList div:nth-child(3) { font-weight: bold; color: #cd7f32; }
@@ -280,6 +275,7 @@ hr {
     cursor: pointer;
 }
 #closeLeaderboard:hover { background: #2e3b48; }
+
 
 
 
