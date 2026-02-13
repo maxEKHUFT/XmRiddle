@@ -1,3 +1,4 @@
+//the initilisation for firebase etc , assume this is all safe and should be here!!!
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
@@ -265,19 +266,19 @@ function nextChart() {
 
         const name = prompt("Enter your name:");
         if (name) {
-            submitScore(name, score); // send score to Firebase
+            submitScore(name, score); 
         }
 
         document.getElementById("next").style.display = "none";
     }
 }
-
+//this is all my firebase stuff , submitting to leaderboard
 async function showLeaderboard() {
     const listDiv = document.getElementById("leaderboardList");
     listDiv.innerHTML = "Loading...";
 
     try {
-        const topScores = await getTopScores(10); // your Firebase function
+        const topScores = await getTopScores(10);
         listDiv.innerHTML = "";
 
         if (topScores.length === 0) {
@@ -294,7 +295,6 @@ async function showLeaderboard() {
         console.error(err);
     }
 
-    // Add .show class to display modal
     document.getElementById("leaderboardModal").classList.add("show");
 }
 
