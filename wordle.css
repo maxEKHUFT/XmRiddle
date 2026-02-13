@@ -195,6 +195,13 @@ hr {
     color: #687782;
     opacity: 0.6;
 }
+
+#next {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #425563;
+}
 /* added in toast , i love toast , also looks better*/
 
 #toast {
@@ -276,6 +283,7 @@ hr {
     cursor: pointer;
 }
 #closeLeaderboard:hover { background: #2e3b48; }
+
 
 
 
