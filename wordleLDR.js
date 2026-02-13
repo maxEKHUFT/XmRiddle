@@ -3,12 +3,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAI-DNNIjjrc8rOyH2KS2LG0iDY2vBDfB8",
-  authDomain: "xmriddle-c681d.firebaseapp.com",
-  projectId: "xmriddle-c681d",
-  storageBucket: "xmriddle-c681d.firebasestorage.app",
-  messagingSenderId: "433139145058",
-  appId: "1:433139145058:web:7921e3424c9756c97f343b"
+  apiKey: "AIzaSyDhtSMvWgP0GZctnPZMptlL_8rlAIeEPOs",
+  authDomain: "xmriddle-2938f.firebaseapp.com",
+  projectId: "xmriddle-2938f",
+  storageBucket: "xmriddle-2938f.firebasestorage.app",
+  messagingSenderId: "360913486203",
+  appId: "1:360913486203:web:c0010f58bf79522f4cfdde"
 };
 
 const app = initializeApp(firebaseConfig);
