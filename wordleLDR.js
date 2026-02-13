@@ -29,8 +29,8 @@ export async function submitScore(name, score) {
   try {
     await addDoc(collection(db, "scores"), {
       name,
-      score,
-      createdAt: serverTimestamp()
+      score: Number(score),       
+      createdAt: serverTimestamp() 
     });
     console.log("Score submitted");
   } catch (err) {
