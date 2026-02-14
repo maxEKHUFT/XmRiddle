@@ -23,13 +23,16 @@ initializeAppCheck(app, {
 const db = getFirestore(app);
 
 import {
+  getFirestore,
   collection,
   addDoc,
   serverTimestamp,
   query,
   orderBy,
   limit,
-  getDocs
+  getDocs,
+  doc,
+  setDoc
 }
   from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
