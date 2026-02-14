@@ -201,7 +201,41 @@ hr {
     font-size: 16px;
     cursor: pointer;
     color: #425563;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #425563;
+    border-radius: 6px;
+    background-color: #fefefe;
+    transition: transform 0.2s ease;
 }
+
+#next:hover {
+    transform: scale(1.05);
+}
+
+/* Shimmer effect */
+#next.shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.6) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    transform: skewX(-25deg);
+    animation: shine 1s forwards;
+}
+
+@keyframes shine {
+    0% { left: -75%; }
+    100% { left: 125%; }
+}
+
 /* added in toast , i love toast , also looks better*/
 
 #toast {
@@ -364,6 +398,7 @@ hr {
 #closeKey:hover {
     background: #2e3b48;
 }
+
 
 
 
