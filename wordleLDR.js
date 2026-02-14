@@ -252,7 +252,7 @@ function updateSubmitState() {
     document.getElementById("submit").disabled = selectedCount !== 2;
 }
 
-function nextChart() {
+async function nextChart() {
     currentIndex++;
 
     if (currentIndex < catalogue.length) {
