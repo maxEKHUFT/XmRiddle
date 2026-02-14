@@ -282,14 +282,21 @@ function nextChart() {
     } else {
         showToast("All charts completed!");
 
-        const name = prompt("Enter your name:");
-        if (name) {
-            submitScore(name, score);
-        }
+const name = prompt("Enter your name:");
+if (name) {
+    try {
+        // Submit the score
+        await submitScore(name, score);
 
-        // Hide submit button at the very end
-        const submitBtn = document.getElementById("submit");
-        submitBtn.style.display = "none";
+        // Update the last submission timestamp for 10-min cooldown
+        await setDoc(doc(db, "users", name), {
+            lastSubmission: serverTimestamp()
+        }, { merge: true });
+
+        showToast("Score submitted! Come back in 10 minutes for a new attempt.");
+    } catch (err) {
+        console.error("Error submitting score:", err);
+        showToast("Failed to submit score. Try again later.");
     }
 }
 
