@@ -284,6 +284,46 @@ hr {
 }
 #closeLeaderboard:hover { background: #2e3b48; }
 
+#blurbModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+#blurbdModal.show {
+    display: flex;
+}
+
+
+#blurbContent {
+    background: #fefefe;
+    border: 2px solid #425563;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 300px;
+    width: 90%;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    font-family: sans-serif;
+    text-align: center;
+}
+
+/* Close button */
+#closeBlurb {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background: #425563;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#closeLeaderboard:hover { background: #2e3b48; }
 
 
 
