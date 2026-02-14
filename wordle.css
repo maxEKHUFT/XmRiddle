@@ -277,6 +277,7 @@ hr {
     box-shadow: 0 5px 20px rgba(0,0,0,0.3);
     font-family: sans-serif;
     text-align: center;
+    color: #425563;
 }
 
 /* Close button */
@@ -307,6 +308,7 @@ hr {
 .modal.show {
     display: flex;
 }
+
 
 
 
