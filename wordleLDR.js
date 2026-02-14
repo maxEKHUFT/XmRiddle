@@ -1,6 +1,8 @@
 //the initilisation for firebase etc , assume this is all safe and should be here!!!
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { initializeAppCheck, ReCaptchaV3Provider }
+  from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app-check.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDhtSMvWgP0GZctnPZMptlL_8rlAIeEPOs",
@@ -10,6 +12,13 @@ const firebaseConfig = {
   messagingSenderId: "360913486203",
   appId: "1:360913486203:web:c0010f58bf79522f4cfdde"
 };
+
+const app = initializeApp(firebaseConfig);
+
+initializeAppCheck(app, {
+  provider: new ReCaptchaV3Provider("YOUR_SITE_KEY_HERE"),
+  isTokenAutoRefreshEnabled: true
+});
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
