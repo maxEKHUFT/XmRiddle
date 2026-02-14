@@ -361,6 +361,11 @@ hr {
     cursor: pointer;
 }
 
+#closeKey:hover {
+    background: #2e3b48;
+}
+
+
 
 
 
