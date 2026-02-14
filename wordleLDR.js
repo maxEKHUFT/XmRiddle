@@ -11,9 +11,7 @@ import {
   query,
   orderBy,
   limit,
-  getDocs,
-  doc,
-  setDoc
+  getDocs
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -282,12 +280,7 @@ async function nextChart() {
         if (name) {
             try {
                 await submitScore(name, score);
-
-                await setDoc(doc(db, "users", name), {
-                    lastSubmission: serverTimestamp()
-                }, { merge: true });
-
-                showToast("Score submitted! Come back in 10 minutes for a new attempt.");
+                showToast("Score submitted!");
             } catch (err) {
                 console.error("Error submitting score:", err);
                 showToast("Failed to submit score. Try again later.");
@@ -296,8 +289,8 @@ async function nextChart() {
 
         const submitBtn = document.getElementById("submit");
         submitBtn.style.display = "none";
-    } // <-- closes the else block
-} // <-- closes nextChart()
+    }
+}
 
 // This is all your Firebase leaderboard function
 async function showLeaderboard() {
