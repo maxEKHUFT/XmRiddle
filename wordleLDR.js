@@ -309,6 +309,23 @@ window.addEventListener("DOMContentLoaded", () => {
 
 });
 
+function showKey() {
+    document.getElementById("keyModal").classList.add("show");
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+
+    document.getElementById("keyIcon")
+        .addEventListener("click", showKey);
+
+    document.getElementById("closeKey")
+        .addEventListener("click", () => {
+            document.getElementById("keyModal")
+                .classList.remove("show");
+        });
+
+});
+
 //all this part is to feed the firebase hosted leaderboard
 async function showLeaderboard() {
     const listDiv = document.getElementById("leaderboardList");
