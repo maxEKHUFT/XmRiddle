@@ -301,7 +301,7 @@ hr {
 }
 
 
-#blurbContent {
+.blurbContent {
     background: #fefefe;
     border: 2px solid #425563;
     border-radius: 10px;
@@ -324,6 +324,7 @@ hr {
     cursor: pointer;
 }
 #closeBlurb:hover { background: #2e3b48; }
+
 
 
 
