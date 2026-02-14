@@ -276,7 +276,7 @@ hr {
     width: 90%;
     box-shadow: 0 5px 20px rgba(0,0,0,0.3);
     font-family: sans-serif;
-    text-align: center;
+    text-align: left;
     color: #425563;
 }
 
@@ -320,6 +320,7 @@ hr {
 .modal.show {
     display: flex;
 }
+
 
 
 
