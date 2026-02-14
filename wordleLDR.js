@@ -292,6 +292,16 @@ async function nextChart() {
     }
 }
 
+//function showBlurb() {
+//  const
+//This is a small, locally developed mini-game designed to help anyone who’s:
+//• new to SPC/XmR charts
+//• a little rusty or out of practice
+//• building confidence around SPC
+//It’s not a substitute for training (you’ll find links on the page), but it is a relaxed, low-pressure way to get some reps in and reinforce what you’ve already learned.
+//There’s no pressure to join the leaderboard — and no tracking or personal data is shared.
+//Just practise, learn, and build confidence at your own pace.
+
 //all this part is to feed the firebase hosted leaderboard
 async function showLeaderboard() {
     const listDiv = document.getElementById("leaderboardList");
