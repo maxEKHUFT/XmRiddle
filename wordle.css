@@ -280,6 +280,17 @@ hr {
     color: #425563;
 }
 
+.centered-bullets {
+    list-style-position: inside; /* makes bullets line up nicely with text */
+    text-align: center;           /* keeps bullets centered like your modal text */
+    padding-left: 0;              /* removes default left padding */
+    margin: 8px 0;                /* spacing around list */
+}
+
+.centered-bullets li {
+    margin-bottom: 4px;           /* spacing between each bullet */
+}
+
 /* Close button */
 #closeBlurb {
     margin-top: 10px;
@@ -308,6 +319,7 @@ hr {
 .modal.show {
     display: flex;
 }
+
 
 
 
