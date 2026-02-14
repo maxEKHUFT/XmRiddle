@@ -202,7 +202,6 @@ function setupSubmit() {
     });
 }
 
-// this is the newer result function, displays results and transforms submit into "> > >"
 function revealResult(isCorrect, correctIcons) {
     document.querySelectorAll(".icon-tile").forEach(tile => {
         const id = tile.dataset.id;
@@ -233,16 +232,14 @@ function revealResult(isCorrect, correctIcons) {
     document.getElementById("explanation").innerText =
         catalogue[currentIndex].explanation;
 
-    // --- MINIMAL CHANGE: transform submit button safely ---
     const submitBtn = document.getElementById("submit");
 
-    // clone button to remove old listeners and prevent toast firing
     const newBtn = submitBtn.cloneNode(true);
     submitBtn.replaceWith(newBtn);
 
     newBtn.innerText = "> > >";
     newBtn.disabled = false;
-    newBtn.onclick = nextChart; // clicking now moves to next chart
+    newBtn.onclick = nextChart;
 }
 
 function updateSubmitState() {
@@ -260,47 +257,48 @@ async function nextChart() {
         loadDir();
         loadIcons();
 
-        // Reset submit button to default state
         const submitBtn = document.getElementById("submit");
         submitBtn.innerText = "Submit";
         submitBtn.disabled = true;
-        setupSubmit(); // restore original submit click behavior
+        setupSubmit();
 
-        // Clear previous round UI
         const resultEl = document.getElementById("result");
         resultEl.innerText = "";
         resultEl.className = "";
 
         document.getElementById("explanation").innerText = "";
 
-        // Reset icons
         document.querySelectorAll(".icon-tile").forEach(tile => {
             tile.classList.remove("correct", "wrong", "selected");
             tile.style.pointerEvents = "auto";
         });
 
     } else {
+        // END OF GAME
         showToast("All charts completed!");
 
-const name = prompt("Enter your name:");
-if (name) {
-    try {
-        // Submit the score
-        await submitScore(name, score);
+        const name = prompt("Enter your name:");
+        if (name) {
+            try {
+                await submitScore(name, score);
 
-        // Update the last submission timestamp for 10-min cooldown
-        await setDoc(doc(db, "users", name), {
-            lastSubmission: serverTimestamp()
-        }, { merge: true });
+                await setDoc(doc(db, "users", name), {
+                    lastSubmission: serverTimestamp()
+                }, { merge: true });
 
-        showToast("Score submitted! Come back in 10 minutes for a new attempt.");
-    } catch (err) {
-        console.error("Error submitting score:", err);
-        showToast("Failed to submit score. Try again later.");
-    }
-}
+                showToast("Score submitted! Come back in 10 minutes for a new attempt.");
+            } catch (err) {
+                console.error("Error submitting score:", err);
+                showToast("Failed to submit score. Try again later.");
+            }
+        }
 
-//this is all my firebase stuff , submitting to leaderboard
+        const submitBtn = document.getElementById("submit");
+        submitBtn.style.display = "none";
+    } // <-- closes the else block
+} // <-- closes nextChart()
+
+// This is all your Firebase leaderboard function
 async function showLeaderboard() {
     const listDiv = document.getElementById("leaderboardList");
     listDiv.innerHTML = "Loading...";
