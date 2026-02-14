@@ -1,4 +1,4 @@
-//the initilisation for firebase etc , assume this is all safe and should be here!!!
+//the initilisation for firebase etc , firestore ok to show these details as intended , recaptcha also ok.
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { initializeAppCheck, ReCaptchaV3Provider }
   from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app-check.js";
@@ -73,7 +73,7 @@ async function loadCatalogue() {
   shuffle(catalogue);
 }
 
-//       icon grid where ive set icon label/id for referencing elsewhere , label tooltip note and then the icon png to render.
+//icon grid where ive set icon label/id for referencing elsewhere , label tooltip note and then the icon png to render.
 
 const icons = [
   { id: "pass", label: "Will consistently pass", src: "btns/pass.png" },
@@ -88,7 +88,7 @@ const icons = [
 
 const iconsContainer = document.getElementById("icons");
 
-//this defaults the chart to show first ,so at the moment its sequential but i can randomise later
+//this defaults the chart to show first ,randomises now
 let currentIndex = 0;
 let score = 0;
 
@@ -200,7 +200,7 @@ function setupSubmit() {
         revealResult(isCorrect, correct);
     });
 }
-
+//reveals the result on icons aswell as the explanation text
 function revealResult(isCorrect, correctIcons) {
     document.querySelectorAll(".icon-tile").forEach(tile => {
         const id = tile.dataset.id;
@@ -247,7 +247,7 @@ function updateSubmitState() {
 
     document.getElementById("submit").disabled = selectedCount !== 2;
 }
-
+//this essentially switchs with the submit button to show a >>> button so its abit more compact/easier /less scrolling (pref no scrolling)
 async function nextChart() {
     currentIndex++;
 
@@ -273,7 +273,7 @@ async function nextChart() {
         });
 
     } else {
-        // END OF GAME
+        // end of my game looop
         showToast("All charts completed!");
 
         const name = prompt("Enter your name:");
@@ -292,7 +292,7 @@ async function nextChart() {
     }
 }
 
-// This is all your Firebase leaderboard function
+//all this part is to feed the firebase hosted leaderboard
 async function showLeaderboard() {
     const listDiv = document.getElementById("leaderboardList");
     listDiv.innerHTML = "Loading...";
