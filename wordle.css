@@ -267,33 +267,54 @@ hr {
 }
 #closeLeaderboard:hover { background: #2e3b48; }
 
+.blurbContent {
+    background: #fefefe;
+    border: 2px solid #425563;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 300px;
+    width: 90%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    font-family: sans-serif;
+    color: #425563;
+}
+
+.blurbContent h2,
+#closeBlurb {
+    text-align: center;
+}
+
 .blurbContent p {
     text-align: left;
-    margin: 0 0 1em 0;  /* remove weird left margin, add spacing below */
+    margin-left: 8px;
+    margin-right: 0;
 }
 
-/* Make UL respect paragraph indentation */
-.blurbContent ul.centered-bullets {
+.centered-bullets {
     list-style-position: outside;
-    padding-left: 1.2em; /* matches your paragraph indent */
-    margin: 0 0 1em 0;    /* spacing below list to next lines */
+    padding-left: 1.2em;
+    margin: 8px 0;
+    text-align: left;
 }
 
-/* Ensure everything after the UL aligns properly */
-.blurbContent p + ul + br,
-.blurbContent ul + br,
-.blurbContent ul + p {
-    display: block;
-    margin-left: 1.2em; /* same as ul padding */
+.centered-bullets li {
+    margin-bottom: 4px;
 }
 
-/* Optional: reset margin for links inside p */
-.blurbContent p a {
-    display: inline-block;
-    margin-left: 0;
+#closeBlurb {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background: #425563;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-#closeBlurb:hover { background: #2e3b48; }
+#closeBlurb:hover {
+    background: #2e3b48;
+}
+
 
 .modal {
     display: none;
@@ -311,6 +332,7 @@ hr {
 .modal.show {
     display: flex;
 }
+
 
 
 
