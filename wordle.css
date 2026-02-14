@@ -276,15 +276,24 @@ hr {
     width: 90%;
     box-shadow: 0 5px 20px rgba(0,0,0,0.3);
     font-family: sans-serif;
-    text-align: left;
     color: #425563;
+}
+
+.blurbContent h2,
+#closeBlurb {
+    text-align: center;
+}
+
+.blurbContent p {
+    text-align: left;
+    margin-left: 8px;  
+    margin-right: 0;
 }
 
 .centered-bullets {
     list-style-position: outside;  
     padding-left: 1.2em;         
-    margin: 8px auto;            
-    display: inline-block;
+    margin: 8px 0;            
     text-align: left;     
 }
 
@@ -292,7 +301,6 @@ hr {
     margin-bottom: 4px;
 }
 
-/* Close button */
 #closeBlurb {
     margin-top: 10px;
     padding: 6px 12px;
@@ -302,6 +310,7 @@ hr {
     border-radius: 5px;
     cursor: pointer;
 }
+
 #closeBlurb:hover { background: #2e3b48; }
 
 .modal {
@@ -320,6 +329,7 @@ hr {
 .modal.show {
     display: flex;
 }
+
 
 
 
