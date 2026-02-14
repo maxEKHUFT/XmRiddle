@@ -256,7 +256,7 @@ hr {
 #leaderboardList div:nth-child(3) { font-weight: bold; color: #cd7f32; }
 
 /* Close button */
-#closeLeaderboard {
+#closeModal {
     margin-top: 10px;
     padding: 6px 12px;
     background: #425563;
@@ -301,16 +301,6 @@ hr {
     margin-bottom: 4px;
 }
 
-#closeBlurb {
-    margin-top: 10px;
-    padding: 6px 12px;
-    background: #425563;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
 #closeBlurb:hover {
     background: #2e3b48;
 }
@@ -350,6 +340,7 @@ hr {
     margin: 15px 0;
     border-radius: 6px;
 }
+
 
 
 
