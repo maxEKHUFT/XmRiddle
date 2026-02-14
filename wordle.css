@@ -333,6 +333,25 @@ hr {
     display: flex;
 }
 
+#keyContent {
+    background: #fefefe;
+    border: 2px solid #425563;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    color: #425563;
+}
+
+.keyImage {
+    width: 100%;
+    height: auto;
+    margin: 15px 0;
+    border-radius: 6px;
+}
+
+
 
 
 
