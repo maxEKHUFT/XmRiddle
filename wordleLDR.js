@@ -233,19 +233,13 @@ function revealResult(isCorrect, correctIcons) {
 
     const submitBtn = document.getElementById("submit");
 
-const newBtn = submitBtn.cloneNode(true);
-submitBtn.replaceWith(newBtn);
+    const newBtn = submitBtn.cloneNode(true);
+    submitBtn.replaceWith(newBtn);
 
-newBtn.id = "next";   
-newBtn.innerText = "> > >";
-newBtn.disabled = false;
-
-newBtn.classList.add("shine");
-
-newBtn.onclick = () => {
-    newBtn.classList.remove("shine"); 
-    nextChart();
-};
+    newBtn.innerText = "> > >";
+    newBtn.disabled = false;
+    newBtn.onclick = nextChart;
+}
 
 function updateSubmitState() {
     const selectedCount =
@@ -364,7 +358,3 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     document.getElementById("iconleaderboard").addEventListener("click", showLeaderboard);
 });
-
-
-
-
