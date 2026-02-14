@@ -315,7 +315,7 @@ function showKey() {
 
 window.addEventListener("DOMContentLoaded", () => {
 
-    document.getElementById("keyIcon")
+    document.getElementById("iconinfo")
         .addEventListener("click", showKey);
 
     document.getElementById("closeKey")
