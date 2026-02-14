@@ -281,14 +281,15 @@ hr {
 }
 
 .centered-bullets {
-    list-style-position: inside; /* makes bullets line up nicely with text */
-    text-align: center;           /* keeps bullets centered like your modal text */
-    padding-left: 0;              /* removes default left padding */
-    margin: 8px 0;                /* spacing around list */
+    list-style-position: outside;  
+    padding-left: 1.2em;         
+    margin: 8px auto;            
+    display: inline-block;
+    text-align: left;     
 }
 
 .centered-bullets li {
-    margin-bottom: 4px;           /* spacing between each bullet */
+    margin-bottom: 4px;
 }
 
 /* Close button */
@@ -319,6 +320,7 @@ hr {
 .modal.show {
     display: flex;
 }
+
 
 
 
