@@ -20,7 +20,6 @@ initializeAppCheck(app, {
   isTokenAutoRefreshEnabled: true
 });
 
-const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 import {
