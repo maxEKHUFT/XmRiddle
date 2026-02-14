@@ -233,13 +233,19 @@ function revealResult(isCorrect, correctIcons) {
 
     const submitBtn = document.getElementById("submit");
 
-    const newBtn = submitBtn.cloneNode(true);
-    submitBtn.replaceWith(newBtn);
+const newBtn = submitBtn.cloneNode(true);
+submitBtn.replaceWith(newBtn);
 
-    newBtn.innerText = "> > >";
-    newBtn.disabled = false;
-    newBtn.onclick = nextChart;
-}
+newBtn.id = "next";   
+newBtn.innerText = "> > >";
+newBtn.disabled = false;
+
+newBtn.classList.add("shine");
+
+newBtn.onclick = () => {
+    newBtn.classList.remove("shine"); 
+    nextChart();
+};
 
 function updateSubmitState() {
     const selectedCount =
