@@ -1,8 +1,20 @@
 //the initilisation for firebase etc , assume this is all safe and should be here!!!
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { initializeAppCheck, ReCaptchaV3Provider }
   from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app-check.js";
+
+import { 
+  getFirestore,
+  collection,
+  addDoc,
+  serverTimestamp,
+  query,
+  orderBy,
+  limit,
+  getDocs,
+  doc,
+  setDoc
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDhtSMvWgP0GZctnPZMptlL_8rlAIeEPOs",
@@ -21,20 +33,6 @@ initializeAppCheck(app, {
 });
 
 const db = getFirestore(app);
-
-import {
-  getFirestore,
-  collection,
-  addDoc,
-  serverTimestamp,
-  query,
-  orderBy,
-  limit,
-  getDocs,
-  doc,
-  setDoc
-}
-  from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 export async function submitScore(name, score) {
   try {
